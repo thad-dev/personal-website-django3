@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'd9&*w_x7brcc#m_tcal$3g=%9y0g(1_(_xoi$^zixfe8y=ic=9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['acuitytpm.pythonanywhere.com',
+                    'thaddeus.dev']
 
 
 # Application definition
@@ -120,6 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# TM added for production
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # TM Added for media
 
