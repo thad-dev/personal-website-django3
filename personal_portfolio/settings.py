@@ -25,8 +25,7 @@ SECRET_KEY = 'd9&*w_x7brcc#m_tcal$3g=%9y0g(1_(_xoi$^zixfe8y=ic=9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['acuitytpm.pythonanywhere.com',
-    'thaddeus.dev']
+ALLOWED_HOSTS = ['www.thaddeus.dev']
 
 
 # Application definition
