@@ -1,0 +1,24 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+
+<h1 class="text-primary mt-5" id="blogdetailtitle">{{ blog.title }}</h1>
+
+<h5 class="text-muted mb-5">{{ blog.date|date:'F jS Y' }}</h5>
+
+<img class="img-fluid rounded mx-auto d-block" src="{{ blog.image.url }}" width="500"  preserveAspectRatio="xMidYMid slice" focusable="false">
+
+</div>
+
+
+<div class="container">
+<hr>
+{{ blog.description|safe }}
+<br>
+<a class="btn btn-primary my-2" href="{% url 'blog:all_blogs' %}" role="button">&laquo; Return</a>
+</div>
+
+{% endblock %}

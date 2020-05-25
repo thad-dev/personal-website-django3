@@ -1,0 +1,44 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<br>
+<h1 id="blogtitle" class="font-weight-bold text-center">Nerd Ramblings</h1>
+<h3 class="text-center mb-5">{{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
+
+<div class="container">
+    <h2 class="mt-5">Blog Index</h2>
+    <hr>
+    </div>
+
+<div class="container">
+    <div class="row mb-2">
+
+    {% for blog in blogs %}
+
+        <div class="col-md-6">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">{{ blog.category }}</strong>
+            <h3 class="mb-0">{{ blog.title }}</h3>
+            <div class="mb-1 text-muted">{{ blog.date|date:'M d' }}</div>
+            <p class="card-text mb-auto">{{ blog.description|striptags|truncatechars:100 }}</p>
+            <a href="{% url 'blog:detail' blog.id %}" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+            <img class="bd-placeholder-img" src="{{ blog.image.url }}" width="200" height="250" preserveAspectRatio="xMidYMid slice" focusable="false">
+            </div>
+        </div>
+        </div>
+
+    {% endfor %}
+
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

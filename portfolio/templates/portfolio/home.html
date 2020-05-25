@@ -1,0 +1,67 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+
+<div>
+    <div class="jumbotron">
+        <div class="container">
+            
+            <h1 class="jumbotron-heading">Thaddeus Martin</h1>
+            <p class="lead text-muted">Student developer at Arizona State University -- researching techniques of dimensionality reduction and convolutional neural network architecture</p>
+            <div class="row my-3">
+                <div class="col-5">
+                  <img src="{% static 'portfolio/icon.png' %}" sclass="img-fluid center" width="90" height="90">
+                </div>
+              </div>
+            <p class=""><a class="btn btn-primary my-2" href="mailto:me@thaddeus.dev" role="button">Contact &raquo;</a></p>
+
+       
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+<h2 class="mt-5">Portfolio</h2>
+<hr>
+</div>
+
+<div class="album py-5">
+<div class="container">
+<div class="row">
+    
+  {% for project in projects %}
+
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+        <img class="card-img-top" src="{{ project.image.url }}" class="img-fluid mb-2" />
+
+        <div class="card-body">
+            <p class="card-text">{{project.description}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <a href="{{project.url}}" class="btn btn-sm btn-outline-secondary" role="button">view</a>
+                
+            </div>
+            <small class="text-muted">{{project.tech}}</small>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+  {% endfor %}
+</div>
+</div>
+</div>
+
+{% endblock %}
+
